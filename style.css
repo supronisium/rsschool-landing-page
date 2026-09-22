@@ -91,11 +91,11 @@ body.dark-theme .menu__item a {
   border-bottom: 2px solid #292826;
 }
 
-.menu__item a:hover {
+.menu__item a:hover, .menu__item--active a {
   border-bottom: 2px solid #403F3D;
 }
 
-body.dark-theme .menu__item a:hover {
+body.dark-theme .menu__item a:hover, body.dark-theme .menu__item--active a {
   border-bottom: 2px solid #E1D4C9;
 }
 
