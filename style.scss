@@ -84,11 +84,11 @@ body.dark-theme .header__logo a svg {color:$color-Light;}
 body.dark-theme .menu__item a {
    border-bottom: 2px solid $color-Dark-theme;
  }
- .menu__item a:hover {
+ .menu__item a:hover, .menu__item--active a {
    border-bottom: 2px solid $color-Dark;
  }
 
-body.dark-theme .menu__item a:hover {
+body.dark-theme .menu__item a:hover, body.dark-theme .menu__item--active a {
    border-bottom: 2px solid $color-Light;
  }
 
