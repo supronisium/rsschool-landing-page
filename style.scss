@@ -21,7 +21,6 @@
 
  html {
    scroll-behavior: smooth;
-   -webkit-font-smoothing: antialiased;
  }
 
  body {
@@ -30,6 +29,8 @@
    color: $color-Dark;
    margin: 0;
    padding: 0;
+   -webkit-font-smoothing: antialiased;
+   -moz-osx-font-smoothing: grayscale;
  }
 
  body.dark-theme
@@ -340,10 +341,13 @@ a.theme-selector__item:hover svg {color: $color-Dark;}
  .block__enjoy, .footer__block {
    padding: 100px;
    border-radius: 40px;
-   margin-bottom: 40px;
+   
  }
 
-.block__enjoy {background: url(assets/bg-enjoy.jpg) no-repeat;}
+ .footer__block {margin-bottom: 40px;}
+
+
+.block__enjoy {background: url(assets/bg-enjoy.jpg) no-repeat; height:644px;}
 
  .enjoy__text {
    width: 530px;
@@ -361,10 +365,9 @@ a.theme-selector__item:hover svg {color: $color-Dark;}
 
 
  .enjoy__button a {
-   font: 600 12px/1.3 $font-1;
+   font: 600 16px/1.5 $font-1;
    letter-spacing: 0.6px;
-   text-transform: uppercase;
-   padding: 20px 20px;
+   padding: 22px 20px;
    border-radius: 30px;
        display: flex;
    align-items: center;
@@ -427,7 +430,7 @@ a.theme-selector__item:hover svg {color: $color-Dark;}
 
 
  .slider__banner-image {
-   height: 480px;
+   height: 500px;
    width: 480px;
    display: block;
  }
@@ -476,13 +479,17 @@ a.theme-selector__item:hover svg {color: $color-Dark;}
 
  /* block About */
  .about {
-   margin-top: 100px;
+   margin-top: 0px;
  }
+
  .block__about {
    display: grid;
    gap: 40px;
    grid-template-columns: 1fr 1fr;
  }
+
+ .about h2 {letter-spacing: -0.3%;}
+
  .block__about-left,
  .block__about-right {
    display: flex;
@@ -520,9 +527,9 @@ a.theme-selector__item:hover svg {color: $color-Dark;}
 .block__mobile-app {display: flex; align-items: center; gap:100px;}
 .mobile-app__icons {display: flex; padding:0; margin:0; gap: 20px;}
 .mobile-app__icons li {padding:0; margin:0; list-style-type: none;}
-.mobile-app__icons li a {display: flex; align-items: center; gap:8px; border: 1px solid $color-Dark-light; width: 200px; height: 64px; border-radius: 30px;  padding-left: 30px;}
+.mobile-app__icons li a {display: flex; align-items: center; gap:8px; border: 1px solid $color-Dark-light; width: 200px; height: 64px; border-radius: 30px;  padding-left: 20px;}
 .mobile-app__icons li a div {font-size:10px;}
-.mobile-app__icons li a div p {padding:0; margin:0; line-height: 100%;}
+.mobile-app__icons li a div p {padding:6px 0 0 0; margin:0; line-height: 100%;}
 .mobile-app__text {padding:0 0 40px 0;}
 .mobile-app__decor img {width:630px;}
  /* end block Mobile app */
@@ -532,15 +539,17 @@ a.theme-selector__item:hover svg {color: $color-Dark;}
 .footer__text {width:530px;}
 .footer__text h2 {color: $color-Light;}
 
+.footer__link-contact {padding-bottom:16px;}
+
 .social {display:flex; align-items: center; gap: 12px; width: 200px;}
 .social a {display:flex;    
    line-height: 100%;
-   padding: 18px;
+   padding: 17px;
    border-radius: 30px;
   }
 
 .link-contact {margin:24px 0 0 0; padding: 0;}
-.link-contact li {list-style-type: none; padding:0 0 16px 0; margin: 0;}
+.link-contact li {list-style-type: none; padding:0 0 26px 0; margin: 0;}
 .link-contact li a {padding-left:30px; color:$color-Light; padding-bottom: 5px;}
 .link-contact li a:hover {border-bottom:2px solid $color-Light;}
 
