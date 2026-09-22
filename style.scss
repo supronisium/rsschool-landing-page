@@ -2,12 +2,10 @@
  $color-Static-White: #FFFFFF;
  $color-Dark: #403F3D;
  $color-Dark-theme: #292826;
- $color-Dark-light: #665F55;
  $color-Brown: #B0907A;
  $color-Brown-light: #C1B6AD;
  $color-Light: #E1D4C9;
- $color-Light-border: #665F55;
-
+ $color-Dark-light: #665F55;
 
 
  /* fonts variables */
@@ -162,7 +160,7 @@ body.dark-theme .mobile-app__icons a:hover {background-color: $color-Light;}
 
 
  .nav__theme-selector {border: 1px solid $color-Brown-light;}
-body.dark-theme .nav__theme-selector {border: 1px solid $color-Light-border;}
+body.dark-theme .nav__theme-selector {border: 1px solid$color-Dark-light;}
 
 a.theme-selector__item svg {color:$color-Dark;}
 body.dark-theme a.theme-selector__item svg {color:$color-Light;}
@@ -187,10 +185,34 @@ body.dark-theme .slider__bottom-control ul li a.active {
  }
 
 body.dark-theme .slider__bottom-control ul li a {
-   background-color: $color-Light-border;
+   background-color:$color-Dark-light;
  }
 
- 
+ .footer__block {background-color: $color-Dark-light;}
+ body.dark-theme .footer__block {background-color: $color-Dark;}
+
+
+.social a {
+   border: 1px solid $color-Brown-light;
+  }
+ body.dark-theme .social a {
+   border: 1px solid $color-Dark-light;
+  }
+
+.social a svg {color:$color-Light;}
+
+.social a:hover {border: 1px solid $color-Light; background-color: $color-Light;}
+body.dark-theme .social a:hover {border: 1px solid $color-Dark-theme; background-color: $color-Dark-theme;}
+
+
+
+.social a:hover svg {color: $color-Dark;}
+body.dark-theme a:hover svg {color: $color-Light;}
+
+.footer__link-contact h3 {color:$color-Light;}
+
+
+
 /* end color schemes */
 
 
@@ -502,22 +524,17 @@ a.theme-selector__item:hover svg {color: $color-Dark;}
  /* end block Mobile app */
 
  /* block FOOTER */
-.footer__block {display: flex; align-items: center; background-color: $color-Dark-light; gap: 100px;}
+.footer__block {display: flex; align-items: center; gap: 100px;}
 .footer__text {width:530px;}
 .footer__text h2 {color: $color-Light;}
 
 .social {display:flex; align-items: center; gap: 12px; width: 200px;}
 .social a {display:flex;    
    line-height: 100%;
-   border: 1px solid $color-Brown-light;
    padding: 18px;
    border-radius: 30px;
   }
-.social a svg {color:$color-Light;}
 
-.social a:hover {border: 1px solid $color-Light; background-color: $color-Light;}
-.social a:hover svg {color: $color-Dark;}
-.footer__link-contact h3 {color:$color-Light;}
 .link-contact {margin:24px 0 0 0; padding: 0;}
 .link-contact li {list-style-type: none; padding:0 0 16px 0; margin: 0;}
 .link-contact li a {padding-left:30px; color:$color-Light; padding-bottom: 5px;}
@@ -529,7 +546,7 @@ a.theme-selector__item:hover svg {color: $color-Dark;}
 .link-contact li.last {padding:0;}
 .link-contact li.last a {border-bottom: 0;}
 
- /* End block FOOTER */
+ /* End block  */
 
 
  /* INNER PAGE CATALOG */
@@ -549,10 +566,10 @@ body.dark-theme .catalog__menu nav ul li a.now .catalog__icon, body.dark-theme .
 body.dark-theme .catalog__item {border: 1px solid $color-Light;}
 
 .catalog__menu nav ul a .catalog__icon {background-color: $color-Brown-light;}
-body.dark-theme .catalog__menu nav ul a .catalog__icon {background-color: $color-Light-border;}
+body.dark-theme .catalog__menu nav ul a .catalog__icon {background-color:$color-Dark-light;}
 
 .catalog__menu nav ul a {border: 1px solid $color-Brown-light;}
-body.dark-theme .catalog__menu nav ul a {border: 1px solid $color-Light-border;}
+body.dark-theme .catalog__menu nav ul a {border: 1px solid$color-Dark-light;}
 
 .catalog__menu nav ul a:hover {background-color: $color-Dark; border: 1px solid $color-Dark;}
 body.dark-theme .catalog__menu nav ul a:hover {background-color: $color-Dark; border: 1px solid $color-Dark;}
