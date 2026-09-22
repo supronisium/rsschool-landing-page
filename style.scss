@@ -21,6 +21,7 @@
 
  html {
    scroll-behavior: smooth;
+   -webkit-font-smoothing: antialiased;
  }
 
  body {
@@ -139,7 +140,7 @@ body.dark-theme .enjoy__button a {
  }
 
  .menu__item--last a {
-   background: url(assets/icon-menu.svg) no-repeat right 2px;
+   background: url(assets/icon-menu.svg) no-repeat right 6px;
  }
 
  body.dark-theme .menu__item--last a {
@@ -245,7 +246,7 @@ body.dark-theme a:hover svg {color: $color-Light;}
  .header__top {
    display: flex;
    align-items: center;
-   margin: 20px auto 20px auto;
+   margin: 16px auto 16px auto;
  }
 
  .header__logo {
@@ -283,11 +284,14 @@ body.dark-theme a:hover svg {color: $color-Light;}
 
   .nav__menu_additional {padding-left:44px;}
 
+
+ .header__menu nav div.nav__menu_additional ul {
+   gap: 24px;
+ }
+
  .menu__item a {
-   font: 600 12px/1.3 $font-1;
+   font: 600 16px/1.5 $font-1;
    white-space: nowrap;
-   text-transform: uppercase;
-   letter-spacing: 0.6px;
    display: block;
    padding: 5px 0px 5px 0;
  }
@@ -299,7 +303,7 @@ body.dark-theme a:hover svg {color: $color-Light;}
  }
 
  .menu__item {
-   padding: 14px 20px;
+   padding: 14px 0px;
    margin: 0;
  }
 
@@ -310,7 +314,7 @@ body.dark-theme a:hover svg {color: $color-Light;}
  }
 
  .menu__item--last a {
-   padding-right: 30px;
+   padding-right: 28px;
  }
 
  .nav__theme-selector {display:flex; gap: 8px; padding: 4px; border-radius: 22px;}
