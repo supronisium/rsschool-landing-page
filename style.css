@@ -223,6 +223,48 @@ body.dark-theme .slider__bottom-control ul li a {
   background-color: #665F55;
 }
 
+.footer__block {
+  background-color: #665F55;
+}
+
+body.dark-theme .footer__block {
+  background-color: #403F3D;
+}
+
+.social a {
+  border: 1px solid #C1B6AD;
+}
+
+body.dark-theme .social a {
+  border: 1px solid #665F55;
+}
+
+.social a svg {
+  color: #E1D4C9;
+}
+
+.social a:hover {
+  border: 1px solid #E1D4C9;
+  background-color: #E1D4C9;
+}
+
+body.dark-theme .social a:hover {
+  border: 1px solid #292826;
+  background-color: #292826;
+}
+
+.social a:hover svg {
+  color: #403F3D;
+}
+
+body.dark-theme a:hover svg {
+  color: #E1D4C9;
+}
+
+.footer__link-contact h3 {
+  color: #E1D4C9;
+}
+
 /* end color schemes */
 .container {
   width: 1440px;
@@ -589,7 +631,6 @@ a.theme-selector__item:hover svg {
 .footer__block {
   display: flex;
   align-items: center;
-  background-color: #665F55;
   gap: 100px;
 }
 
@@ -611,26 +652,8 @@ a.theme-selector__item:hover svg {
 .social a {
   display: flex;
   line-height: 100%;
-  border: 1px solid #C1B6AD;
   padding: 18px;
   border-radius: 30px;
-}
-
-.social a svg {
-  color: #E1D4C9;
-}
-
-.social a:hover {
-  border: 1px solid #E1D4C9;
-  background-color: #E1D4C9;
-}
-
-.social a:hover svg {
-  color: #403F3D;
-}
-
-.footer__link-contact h3 {
-  color: #E1D4C9;
 }
 
 .link-contact {
@@ -674,7 +697,7 @@ a.theme-selector__item:hover svg {
   border-bottom: 0;
 }
 
-/* End block FOOTER */
+/* End block  */
 /* INNER PAGE CATALOG */
 /* colour catalog scheme */
 .catalog__menu nav ul li a.now, .catalog__menu nav ul li a:hover {
