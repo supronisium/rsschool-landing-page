@@ -643,7 +643,7 @@ p.option {padding-top:20px;}
 
 
 
-.button__reload {width:60px; display: flex; margin:0 auto;}
+.button__reload {width:60px; display: flex; margin:0 auto; display: none;}
 
  /* ################ Responsive ################# */
 
@@ -669,8 +669,6 @@ p.option {padding-top:20px;}
  @media only screen and (max-width: 768px) {
 
   .header__menu {display: flex;  justify-content: flex-end; align-items: center;}
-
-
 
  .nav__theme-selector {display:flex; gap: 10px; padding: 6px; border-radius: 25px; margin-right:24px;}
 a.theme-selector__item {width:40px; height: 40px;}
@@ -755,7 +753,10 @@ a.theme-selector__item {width:40px; height: 40px;}
 /* INNER 768 */
 h1.inner__header {width:100%;}
 
+.block__catalog {justify-content: space-evenly;}
 
+.button__reload {display: block;}
+.block__catalog {height:1054px; overflow: hidden; margin-bottom: 0px;}
 
  }
 

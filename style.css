@@ -925,6 +925,7 @@ p.option {
   width: 60px;
   display: flex;
   margin: 0 auto;
+  display: none;
 }
 
 /* ################ Responsive ################# */
@@ -1044,6 +1045,17 @@ p.option {
   /* INNER 768 */
   h1.inner__header {
     width: 100%;
+  }
+  .block__catalog {
+    justify-content: space-evenly;
+  }
+  .button__reload {
+    display: block;
+  }
+  .block__catalog {
+    height: 1054px;
+    overflow: hidden;
+    margin-bottom: 0px;
   }
 }
 
