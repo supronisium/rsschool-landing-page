@@ -396,7 +396,7 @@ a.theme-selector__item:hover svg {color: $color-Dark;}
  .slider__container {
    display: flex;
    justify-content: space-between;
-   padding: 0 40px;
+   padding: 0 4px;
  }
 
  .slider__banners {
@@ -445,7 +445,7 @@ a.theme-selector__item:hover svg {color: $color-Dark;}
  .slider__nav a, .button__reload a {
    display: flex;
    line-height: 100%;
-   padding: 18px;
+   padding: 17px;
    border-radius: 30px;
  }
 
@@ -631,50 +631,7 @@ h1.inner__header {width:800px; margin: -10px auto 33px auto; padding:0; text-ali
 
 
 
-.modal-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(64, 63, 61, 0.80);
-  display: none;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
-}
-.modal-overlay.active {
-  display: flex;
-}
-.modal-window {width:800px; border-radius: 40px; background-color: $color-Light; padding:20px; overflow: hidden; animation: fadeIn 0.9s ease;}
-@keyframes fadeIn {
-  from { opacity: 0;}
-  to { opacity: 1;}
-}
-.modal-window__container {display: flex; gap: 20px;}
-
-.modal__menu nav ul {display: flex; flex-wrap: wrap; gap: 8px; padding:0 0 20px 0; margin:0 auto;}
-.modal__menu nav ul li a {font:600 16px/1 $font-1; letter-spacing: 0.6px; border-radius: 30px; color:$color-Dark; display: flex; align-items: center; gap: 8px; padding: 8px 16px 8px 8px; border: 1px solid $color-Brown-light;}
-.modal__menu nav ul li a:hover {color:$color-Light; background-color: $color-Dark; border: 1px solid $color-Dark; transition-duration: 0.8s;}
-.modal__menu nav ul li a .modal__icon {border-radius: 20px; background-color: $color-Brown-light; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center;}
-.modal__menu nav ul li {list-style-type: none; padding:2px 0 0 0; margin:0;}
-.modal__menu nav ul li a.active {color: $color-Light; background-color: $color-Dark; border: 1px solid $color-Dark;}
-.modal__menu nav ul li a.active .modal__icon, .modal__menu nav ul li a:hover .modal__icon {color: $color-Dark; background-color: $color-Light;}
-
-.modal__total {padding-bottom:20px;}
-.modal__total, .modal__button a {font:600 24px/1.5 $font-1; display: flex;}
-.modal__total .price {flex:1; text-align: right;}
-.modal__caption {border-top:1px solid $color-Brown-light; padding-top:10px; padding-bottom:20px;}
-.modal__caption div {font:600 10px/1.4 $font-1; background: url(assets/icon-info-empty.svg) no-repeat left top; padding-left:20px;}
-.modal__button a {color: $color-Dark; display: flex; align-items: center; justify-content: center; border-radius: 20px; border: 1px solid $color-Dark-light;}
-.modal__button a:hover {color: $color-Light; background: $color-Dark-light; border: 1px solid $color-Dark-light;}
-
-
 p.option {padding-top:20px;}
-
-
-
-
 
 
 
@@ -695,20 +652,36 @@ p.option {padding-top:20px;}
      width: 100%;
      margin: 0;
    }
+
+   .block__enjoy {background: url(assets/bg-enjoy.jpg) center center; height: 644px;}
+
+
    /* Inner */
  }
 
  @media only screen and (max-width: 1044px) {
+
+  .header__menu nav ul {gap: 20px;}
+  .nav__menu_additional {padding-left:0;}
+
  }
 
  @media only screen and (max-width: 768px) {
 
-.header__menu nav {display:none;}
+  .header__menu {display: flex;  justify-content: flex-end; align-items: center;}
+
+
+
+ .nav__theme-selector {display:flex; gap: 10px; padding: 6px; border-radius: 25px; margin-right:24px;}
+a.theme-selector__item {width:40px; height: 40px;}
+
+
+.header__menu .nav__menu, .menu__item--last {display:none;}
 
  .burger__menu {
       display: flex;
-      width: 40px;
-      height: 40px;
+      width: 44px;
+      height: 44px;
       flex-direction: column;
       justify-content: center;
       align-items: center;
@@ -716,6 +689,8 @@ p.option {padding-top:20px;}
       flex-shrink: 0;
       z-index: 51;
       position: relative;
+      border:1px solid $color-Dark-light;
+      border-radius: 100%;
     }
 
     .header__logo {z-index: 52;}
@@ -726,7 +701,6 @@ p.option {padding-top:20px;}
     .burger__menu div {
       width: 20px;
       border-radius: 1px;
-      transition: transform 0.2s ease-in-out;
     }
 
     .burger__menu div {
@@ -734,74 +708,63 @@ p.option {padding-top:20px;}
     }
 
 
-
-    /* BURGER */
-    .nav {
-      position: absolute;
-      top: 0;
-      height:100%;
-      z-index: 50;
-      right:100%;
-      overflow-y: auto;
-      background-color:$color-Light;
-      /*  animation */
-      transform: translateX(100%);
-      transition: width 0.3s ease-in-out, transform 0.3s ease-in-out;
-  }
-  .nav.open {
-    display: flex;
-    flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  transform: translateX(0);
-  right:0;
-  width: 100%;
-  }
-  .nav ul {
-    flex-direction: column;
-    row-gap: 30px;
-}
-  .nav.open li {text-align: center; }
-
-.nav.open li a {font:600 31px/1.25 $font-1;}
-
-.burger__menu.burger__menu_active {gap:0;}
-.burger__menu.burger__menu_active div {
-  transform: rotate(45deg) translate(0, 50%); position:abolsute; top:0;
-}
-.burger__menu.burger__menu_active div:nth-child(2) {
-  transform: rotate(135deg) translate(0, 50%); position:abolsute; top:0;
-}
-
-.block__body.collapsed {overflow: hidden;}
+ .block__enjoy, .footer__block {
+   padding: 100px 60px;
+   border-radius: 40px;
+   
+ }
 
 
 
+/* about 768 */
+.block__about {grid-template-columns: 1fr;}
+
+ .block__about-right div:nth-child(odd) {
+   display: none;
+ }
+
+ .block__about-left div:nth-child(even) {
+   display: none;
+ }
+
+ .block__about-left div, .block__about-right div {width:100%;}
 
 
 
+ .block__about-left div:nth-child(odd),
+ .block__about-right div:nth-child(even) {
+  background-size: 105% auto;
+  background-position: center center;
+ }
+ .block__about-left div:nth-child(even),
+ .block__about-right div:nth-child(odd) {
+  background-size: 105% auto;
+  background-position: center center;
+ }
+/* end about 768 */
+
+.block__mobile-app h2 {padding-right: 100px;}
+.block__mobile-app {flex-wrap: wrap; gap: 100px;}
+.mobile-app__decor {display: flex; align-items: flex-end;}
+.mobile-app__decor img {margin-bottom: 0; margin-left: 30px;}
 
 
+.footer__block {flex-wrap: wrap; padding: 100px 60px 110px 60px;}
 
 
-  .modal-window {width:688px;}
-
-
-
-
+/* INNER 768 */
+h1.inner__header {width:100%;}
 
 
 
  }
 
  @media only screen and (max-width: 767.5px) {
-  .modal-window {width:500px;}
-  .modal-window__image {display: none;}
+
 }
 
 
  @media only screen and (max-width: 480px) {
-  .modal-window {width:342px;}
  }
 
  @media only screen and (max-width: 380px) {
