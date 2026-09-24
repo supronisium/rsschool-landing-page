@@ -58,7 +58,7 @@
    margin: 0;
  }
 
- h3 {
+ h3, .header-3 {
    font: 600 normal 24px/1.25 $font-1;
    padding: 0 0 16px 0;
    margin: 0;
@@ -68,8 +68,8 @@
 /* color schemes */
 body.dark-theme {color: $color-Brown-light;}
 
-h1, h2, h3 {color: $color-Dark;}
-body.dark-theme h1, body.dark-theme h2, body.dark-theme h3 
+h1, h2, h3, .header-3 {color: $color-Dark;}
+body.dark-theme h1, body.dark-theme h2, body.dark-theme h3, body.dark-theme .header-3 
   {color: $color-Light;}
 
  a {color: $color-Dark;}
@@ -630,9 +630,6 @@ h1.inner__header {width:800px; margin: -10px auto 33px auto; padding:0; text-ali
 .catalog__item.show:hover img {width:310px; height:310px; transition-duration: 0.8s;}
 
 
-
-
-
 p.option {padding-top:20px;}
 
 
@@ -794,6 +791,7 @@ body.dark-theme .enjoy__button a {
  }
 
 
+.footer__block {padding-bottom:108px;}
 
 
 
@@ -801,8 +799,7 @@ body.dark-theme .enjoy__button a {
 
 
 
-
-/* INNER 768 */
+/* INNER 1044 */
 
 .button__reload {display: block;}
 .block__catalog {height:1054px; overflow: hidden; margin-bottom: 0px;}
@@ -827,7 +824,7 @@ body.dark-theme .enjoy__button a {
    margin: 0;
  }
 
- h3 {
+ h3, .header-3 {
    font: 600 normal 24px/1.25 $font-1;
    padding: 0 0 16px 0;
    margin: 0;
@@ -838,7 +835,7 @@ body.dark-theme .enjoy__button a {
 
  @media only screen and (max-width: 600px) {
 
-
+.slider__content {width:100%;}
 
 .block__enjoy, .footer__block {
         padding: 60px 16px;
@@ -897,6 +894,15 @@ body.dark-theme .enjoy__button a {
 
    .wrapper {
    padding: 0 16px 100px 16px;
+
+   .inner__header {padding-bottom:32px;}
+
+   .catalog__menu nav ul {gap: 8px;}
+
+   .item-title {padding-bottom:12px;}
+
+   .social {margin-top:6px;}
+
  }
   .wrapper--zero {padding-bottom:0;}
 
