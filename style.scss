@@ -173,7 +173,6 @@ body.dark-theme a.theme-selector__item svg {color:$color-Light;}
 
 
 
-
  .slider__bottom-control ul li a.active {
    background-color: $color-Dark;
  }
@@ -317,6 +316,8 @@ body.dark-theme a:hover svg {color: $color-Light;}
  .menu__item--last a {
    padding-right: 28px;
  }
+
+ .menu__item--double {display: none;}
 
  .nav__theme-selector {display:flex; gap: 8px; padding: 4px; border-radius: 22px;}
 
@@ -725,11 +726,12 @@ h1.inner__header {width:100%;}
 
   .header__menu {display: flex;  justify-content: flex-end; align-items: center;}
 
- .nav__theme-selector {display:flex; gap: 10px; padding: 6px; border-radius: 25px; margin-right:24px;}
+ .nav__theme-selector {display:flex; gap: 10px; padding: 6px; border-radius: 25px; margin-right:24px; position: absolute; top: 10px; right:60px; z-index: 100;}
 a.theme-selector__item {width:40px; height: 40px;}
 
 
-.header__menu .nav__menu, .menu__item--last {display:none;}
+.header__menu nav {display:none;}
+.nav__menu_additional .menu__item--last {display: none;}
 
  .burger__menu {
       display: flex;
@@ -744,6 +746,72 @@ a.theme-selector__item {width:40px; height: 40px;}
       position: relative;
       border-radius: 100%;
     }
+
+/* BURGER */
+    .nav {
+      position: absolute;
+      top: 0;
+      height:100%;
+      z-index: 50;
+      right:100%;
+      overflow-y: auto;
+      background-color:$color-Light;
+      /*  animation */
+      transform: translateX(100%);
+      transition: width 0.3s ease-in-out, transform 0.3s ease-in-out;
+  }
+  .nav.open {
+    display: flex;
+    flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transform: translateX(0);
+  right:0;
+  width: 100%;
+  }
+  .nav ul {
+    flex-direction: column;
+    row-gap: 30px;
+}
+  .nav.open li {text-align: center; }
+
+.nav.open li a {font:600 31px/1.25 $font-1;}
+
+.burger__menu.burger__menu_active {gap:0;}
+.burger__menu.burger__menu_active div {
+  transform: rotate(45deg) translate(0, 50%); position:abolsute; top:0;
+}
+.burger__menu.burger__menu_active div:nth-child(2) {
+  transform: rotate(135deg) translate(0, 50%); position:abolsute; top:0;
+}
+
+.block__body.collapsed {overflow: hidden;}
+
+ .menu__item--double {display: block;}
+
+
+
+/* color scheme */
+
+.block__body.dark-theme.collapsed .nav.open {background-color: #292826;}
+
+/* end color scheme */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     .header__logo {z-index: 52;}
 

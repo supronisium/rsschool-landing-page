@@ -1,3 +1,12 @@
+// MENU
+document.querySelector('.burger__menu').addEventListener('click', function() {  
+    this.classList.toggle('burger__menu_active');
+    document.querySelector('.nav').classList.toggle('open');
+    document.querySelector('.block__body').classList.toggle('collapsed');
+})
+
+// DARK THEME
+
 const themeItems = document.querySelectorAll('.theme-selector__item');
 
 function setTheme(theme) {
@@ -21,7 +30,9 @@ themeItems.forEach(item => {
     });
 });
 
-// Восстанавливаем тему
+// Restore theme
 const savedTheme = localStorage.getItem('theme') || 'light';
 
 setTheme(savedTheme);
+
+
