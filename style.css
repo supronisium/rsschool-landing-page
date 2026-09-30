@@ -384,6 +384,10 @@ a.active:hover {
   border-radius: 22px;
 }
 
+.nav__theme-selector--double {
+  display: none;
+}
+
 a.theme-selector__item {
   width: 36px;
   height: 36px;
@@ -1018,17 +1022,6 @@ p.option {
     justify-content: flex-end;
     align-items: center;
   }
-  .nav__theme-selector {
-    display: flex;
-    gap: 10px;
-    padding: 6px;
-    border-radius: 25px;
-    margin-right: 24px;
-    position: absolute;
-    top: 10px;
-    right: 60px;
-    z-index: 100;
-  }
   a.theme-selector__item {
     width: 40px;
     height: 40px;
@@ -1036,8 +1029,31 @@ p.option {
   .header__menu nav {
     display: none;
   }
+  .nav__theme-selector {
+    display: none;
+  }
+  .nav__theme-selector--double {
+    display: flex;
+    gap: 10px;
+    padding: 6px;
+    border-radius: 25px;
+    margin-right: 36px;
+    position: absolute;
+    right: 60px;
+    z-index: 100;
+  }
+  /* dropdown */
+  .nav__menu_additional {
+    display: none;
+  }
   .nav__menu_additional .menu__item--last {
     display: none;
+  }
+  .header__menu nav ul {
+    gap: 10px;
+  }
+  .nav__menu {
+    display: block;
   }
   .burger__menu {
     display: flex;
@@ -1067,22 +1083,33 @@ p.option {
   }
   .nav.open {
     display: flex;
+    width: 100%;
+  }
+  .nav.open .nav__menu {
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     transform: translateX(0);
-    right: 0;
-    width: 100%;
   }
-  .nav ul {
+  .nav .nav__menu ul {
     flex-direction: column;
-    row-gap: 30px;
+    row-gap: 60px;
   }
   .nav.open li {
     text-align: center;
   }
+  .nav.open li.menu__item {
+    padding: 0;
+  }
   .nav.open li a {
-    font: 600 31px/1.25 "Inter";
+    font: 600 32px/1.25 "Inter";
+  }
+  .menu__item a {
+    padding: 0;
+  }
+  .menu__item--last {
+    flex: initial;
   }
   .burger__menu.burger__menu_active {
     gap: 0;
@@ -1103,6 +1130,10 @@ p.option {
   .menu__item--double {
     display: block;
   }
+  .menu__item--double a {
+    padding-right: 28px;
+    margin-top: 40px;
+  }
   /* color scheme */
   .block__body.dark-theme.collapsed .nav.open {
     background-color: #292826;
@@ -1110,9 +1141,6 @@ p.option {
   /* end color scheme */
   .header__logo {
     z-index: 52;
-  }
-  .header__menu nav ul li.last {
-    padding-left: 0;
   }
   .burger__menu div {
     width: 20px;
@@ -1269,7 +1297,7 @@ p.option {
   .wrapper--zero {
     padding-bottom: 0;
   }
-  .nav__theme-selector {
+  .nav__theme-selector--double {
     margin-right: 12px;
   }
   /* INNER */
