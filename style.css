@@ -1206,6 +1206,10 @@ p.option {
     padding: 0 0 16px 0;
     margin: 0;
   }
+  .mobile-app__decor img {
+    width: 100%;
+    margin: 0 0 -18px 0;
+  }
 }
 @media only screen and (max-width: 600px) {
   .slider__content {
@@ -1253,10 +1257,6 @@ p.option {
   .mobile-app__icons {
     flex-wrap: wrap;
     margin-bottom: 30px;
-  }
-  .mobile-app__decor img {
-    width: 100%;
-    margin: 0 0 -18px 0;
   }
   .footer__block {
     gap: 40px;
