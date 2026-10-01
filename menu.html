@@ -13,7 +13,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100..900;1,100..900&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="modern-normalize.css">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?2">
   <link rel="icon" href="assets/favicon.png" type="image/x-icon">
 </head>
 
@@ -176,6 +176,7 @@
 
           <h1 class="inner__header">Behind each of our cups hides an <span class="accent">amazing surprise</span></h1>
 
+          <!-- Category selector -->
           <div class="catalog__menu">
             <nav>
               <ul>
@@ -194,90 +195,9 @@
               </ul>
             </nav>
           </div>
-
+          <!-- End category selector -->
+            
           <div class="block__catalog">
-            <!-- Coffee -->
-            <div class="catalog__item">
-              <a href="#" class="open-modal">
-                <div class="catalog__picture"><div class="picture-item" style="background-image: url(upload/coffee-1.jpg)"></div></div>
-                <div class="catalog__description">
-                  <div class="header-3 item-title">Irish coffee</div>
-                  <p class="tile-description">Fragrant black coffee with Jameson Irish whiskey and whipped milk</p>
-                  <div class="header-3">$7.00</div>
-                </div>
-              </a>
-            </div>
-            <div class="catalog__item">
-              <a href="#" class="open-modal">
-                <div class="catalog__picture"><div class="picture-item" style="background-image: url(upload/coffee-2.jpg)"></div></div>
-                <div class="catalog__description">
-                  <div class="header-3 item-title">Kahlua coffee</div>
-                  <p class="tile-description">Classic coffee with milk and Kahlua liqueur under a cap of frothed milk</p>
-                  <div class="header-3">$7.00</div>
-                </div>
-              </a>
-            </div>
-            <div class="catalog__item">
-              <a href="#" class="open-modal">
-                <div class="catalog__picture"><div class="picture-item" style="background-image: url(upload/coffee-3.jpg)"></div></div>
-                <div class="catalog__description">
-                  <div class="header-3 item-title">Honey raf</div>
-                  <p class="tile-description">Espresso with frothed milk, cream and aromatic honey</p>
-                  <div class="header-3">$5.50</div>
-                </div>
-              </a>
-            </div>
-            <div class="catalog__item">
-              <a href="#" class="open-modal">
-                <div class="catalog__picture"><div class="picture-item" style="background-image: url(upload/coffee-4.jpg)"></div></div>
-                <div class="catalog__description">
-                  <div class="header-3">Ice cappuccino</div>
-                  <p class="tile-description">Cappuccino with soft thick foam in summer version with ice</p>
-                  <div class="header-3">$5.00</div>
-                </div>
-              </a>
-            </div>
-            <div class="catalog__item">
-              <a href="#" class="open-modal">
-                <div class="catalog__picture"><div class="picture-item" style="background-image: url(upload/coffee-5.jpg)"></div></div>
-                <div class="catalog__description">
-                  <div class="header-3">Espresso</div>
-                  <p class="tile-description">Classic black coffee</p>
-                  <div class="header-3">$4.50</div>
-                </div>
-              </a>
-            </div>
-            <div class="catalog__item">
-              <a href="#" class="open-modal">
-                <div class="catalog__picture"><div class="picture-item" style="background-image: url(upload/coffee-6.jpg)"></div></div>
-                <div class="catalog__description">
-                  <div class="header-3 item-title">Latte</div>
-                  <p class="tile-description">Espresso coffee with the addition of steamed milk and dense milk foam</p>
-                  <div class="header-3">$5.50</div>
-                </div>
-              </a>
-            </div>
-            <div class="catalog__item">
-              <a href="#" class="open-modal">
-                <div class="catalog__picture"><div class="picture-item" style="background-image: url(upload/coffee-7.jpg)"></div></div>
-                <div class="catalog__description">
-                  <div class="header-3 item-title">Latte macchiato</div>
-                  <p class="tile-description">Espresso with frothed milk and chocolate</p>
-                  <div class="header-3">$5.50</div>
-                </div>
-              </a>
-            </div>
-            <div class="catalog__item">
-              <a href="#" class="open-modal">
-                <div class="catalog__picture"><div class="picture-item" style="background-image: url(upload/coffee-8.jpg)"></div></div>
-                <div class="catalog__description">
-                  <div class="header-3 item-title">Coffee with cognac</div>
-                  <p class="tile-description">Fragrant black coffee with cognac and whipped cream</p>
-                  <div class="header-3">$6.50</div>
-                </div>
-              </a>
-            </div>
-            <!-- END Coffee -->
           </div>
 
           <br><br>
@@ -293,6 +213,72 @@
             </a>
           </div>
           <!-- END RELOAD -->
+
+
+          <!-- MODAL don't implemented -->
+          <div class="modal-overlay" id="modal">
+          <div class="modal-window">
+            <div class="modal-window__container">
+              <div class="modal-window__image">
+                <div class="catalog__picture"><img class="modal-img" src="%picture" alt="%Name"></div>
+              </div>
+              <div class="modal-window__text">
+                <h3 class="modal-h3">%Name</h3>
+                <p class="modal-description" id="description">%Description</p>
+                <p class="option">Size</p>
+                <div class="modal__menu">
+                  <nav>
+                    <ul>
+                      <li><a class="active" href="#">
+                          <div class="modal__icon" id="sizes">%Sizes</div>
+                          <div id="size">%Size</div>
+                        </a></li>
+                      <li><a href="#">
+                          <div class="modal__icon" id="sizes">%Sizes</div>
+                          <div id="size">%Size</div>
+                        </a></li>
+                      <li><a href="#">
+                          <div class="modal__icon" id="sizes">%Sizes</div>
+                          <div id="size">%Size</div>
+                        </a></li>
+                    </ul>
+                  </nav>
+                </div>
+                <p class="option">Additives</p>
+                <div class="modal__menu">
+                  <nav>
+                    <ul>
+                      <li><a class="active" href="#">
+                          <div class="modal__icon">1</div>
+                          <div id="name">%Name</div>
+                        </a></li>
+                      <li><a href="#">
+                          <div class="modal__icon">2</div>
+                          <div id="name">%Name</div>
+                        </a></li>
+                      <li><a href="#">
+                          <div class="modal__icon">3</div>
+                          <div id="name">%Name</div>
+                        </a></li>
+                    </ul>
+                  </nav>
+                </div>
+                <div class="modal__total">
+                  <div>Total:</div>
+                  <div class="price" id="price">%price + add-price</div>
+                </div>
+                <div class="modal__caption">
+                  <div>The cost is not final. Download our mobile app to see the final price and place your order. Earn
+                    loyalty points and enjoy your favorite coffee with up to 20% discount.</div>
+                </div>
+                <div class="modal__button">
+                  <a href="#" class="close-modal" onclick="closeModal('modal')">Close</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          </div>
+          <!-- END MODAL -->
 
 
         </div>

@@ -605,7 +605,7 @@ h1.inner__header {width:800px; margin: -10px auto 33px auto; padding:0; text-ali
 
 .catalog__item div {text-align: left;}
 .catalog__item a {color:$color-Dark;}
-.catalog__item a:hover {color:$color-Brown;}
+.catalog__item a:hover {color:$color-Brown; text-decoration: none;}
 
 .catalog__description {padding:20px;}
 .catalog__description p {height:72px; overflow: hidden; margin-bottom:12px;}
@@ -631,7 +631,143 @@ h1.inner__header {width:800px; margin: -10px auto 33px auto; padding:0; text-ali
 .catalog__item.show:hover img {width:310px; height:310px; transition-duration: 0.8s;}
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(144, 144, 144, 0.8);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+.modal-overlay.active {
+  display: flex;
+}
+.modal-window {width:800px; border-radius: 40px; background-color: $color-Light; padding:20px; overflow: hidden; animation: fadeIn 0.9s ease;}
+@keyframes fadeIn {
+  from { opacity: 0;}
+  to { opacity: 1;}
+}
+.modal-window__container {display: flex; gap: 20px;}
+
+.modal__menu nav ul {display: flex; flex-wrap: wrap; gap: 8px; padding:0 0 20px 0; margin:0 auto;}
+.modal__menu nav ul li a {font:600 16px/1 $font-1; letter-spacing: 0.6px; border-radius: 30px; color:$color-Dark; display: flex; align-items: center; gap: 8px; padding: 8px 16px 8px 8px; border: 1px solid $color-Brown-light;}
+.modal__menu nav ul li a:hover {color:$color-Light; background-color: $color-Dark; border: 1px solid $color-Dark; transition-duration: 0.8s;}
+.modal__menu nav ul li a .modal__icon {border-radius: 20px; background-color: $color-Brown-light; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center;}
+.modal__menu nav ul li {list-style-type: none; padding:2px 0 0 0; margin:0;}
+.modal__menu nav ul li a.active {color: $color-Light; background-color: $color-Dark; border: 1px solid $color-Dark;}
+.modal__menu nav ul li a.active .modal__icon, .modal__menu nav ul li a:hover .modal__icon {color: $color-Dark; background-color: $color-Light;}
+
+.modal__total {padding-bottom:20px;}
+.modal__total, .modal__button a {font:600 24px/1.5 $font-1; display: flex;}
+.modal__total .price {flex:1; text-align: right;}
+.modal__caption {border-top:1px solid $color-Brown-light; padding-top:10px; padding-bottom:20px;}
+.modal__caption div {font:600 10px/1.4 $font-1; background: url(assets/icon-info-empty.svg) no-repeat left top; padding-left:20px;}
+.modal__button a {color: $color-Dark; display: flex; align-items: center; justify-content: center; border-radius: 20px; border: 1px solid $color-Dark-light;}
+.modal__button a:hover {color: $color-Light; background: $color-Dark-light; border: 1px solid $color-Dark-light;}
+
+
 p.option {padding-top:20px;}
+
+    /* Затемнение фона */
+    .modal-overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 1000;
+    }
+    
+    /* Модальное окно */
+    .modal {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        z-index: 1001;
+        width: 600px;
+        text-align: center;
+    }
+    
+    /* Кнопка закрытия */
+    .close-btn {
+        display: inline-block;
+        margin-top: 20px;
+        background: #333333;
+        color: #FFFFFF;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        text-decoration: none;
+    }
+    
+    .close-btn:hover {
+        background: #666666;
+    }
+    
+    /* Ссылка для открытия модального окна */
+    .open-modal-link {
+        cursor: pointer;
+        text-decoration: none;
+    }
+    
+    .open-modal-link:hover {
+        text-decoration: underline;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
