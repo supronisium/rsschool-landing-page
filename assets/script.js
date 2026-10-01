@@ -37,6 +37,291 @@ const savedTheme = localStorage.getItem('theme') || 'light';
 setTheme(savedTheme);
 
 
+// ############## PRODUCT CATALOG ##############
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const catalog = document.querySelector(".block__catalog");
+    const reloadButton = document.querySelector(".button__reload");
+    const categoryLinks = document.querySelectorAll(".catalog__menu a[id]");
+
+    if (!catalog || !categoryLinks.length) {
+        return;
+    }
+
+    let products = [];
+    let pictures = [];
+
+    let activeCategory = document.querySelector(".catalog__menu a.now");
+
+    if (!activeCategory) {
+        activeCategory = categoryLinks[0];
+        activeCategory.classList.add("now");
+    }
+
+    const MOBILE_LIMIT = 4;
+
+    //  UPLOAD JSON
+
+    async function loadProducts() {
+        try {
+            const [productsResponse, picturesResponse] = await Promise.all([
+                fetch("products.json"),
+                fetch("products-pictures.json")
+            ]);
+
+            products = await productsResponse.json();
+            pictures = await picturesResponse.json();
+
+            renderProducts();
+
+        } catch (error) {
+            console.error("Ошибка загрузки каталога:", error);
+
+            catalog.innerHTML = `
+                <div class="catalog__error">
+                    Error.
+                </div>
+            `;
+        }
+    }
+
+    //  UPLOAD IMAGE
+
+    function getProductPicture(product) {
+
+        const picture = pictures.find(function (item) {
+            return (
+                item.name === product.name &&
+                item.category === product.category
+            );
+        });
+
+        if (picture) {
+            return picture.picture;
+        }
+
+        return "";
+    }
+
+    //  INSERT HTML
+
+    function createProductCard(product) {
+
+        const picture = getProductPicture(product);
+
+        const item = document.createElement("div");
+        item.className = "catalog__item";
+        item.dataset.category = product.category;
+
+        item.innerHTML = `
+            <a href="#" class="open-modal-link red">
+                <div class="catalog__picture">
+                    <div class="picture-item" style="background-image: url(upload/${picture})"></div>
+                </div>
+
+                <div class="catalog__description">
+                    <div class="header-3 item-title">
+                        ${escapeHTML(product.name)}
+                    </div>
+
+                    <p class="tile-description">
+                        ${escapeHTML(product.description)}
+                    </p>
+
+                    <div class="header-3">
+                       $${escapeHTML(product.price)}
+                    </div>
+                </div>
+            </a>
+        `;
+
+    // OPEN MODAL
+
+        const link = item.querySelector(".open-modal-link");
+
+        link.addEventListener("click", function (event) {
+            event.preventDefault();
+
+            openProductModal(product);
+        });
+
+        return item;
+    }
+
+    // CREATE LIST OF PRODUCTS ON PAGE
+
+    function renderProducts() {
+
+        if (!activeCategory) {
+            return;
+        }
+
+        const categoryId = activeCategory.id;
+
+        const categoryProducts = products.filter(function (product) {
+            return product.category === categoryId;
+        });
+
+        catalog.innerHTML = "";
+
+        if (categoryProducts.length === 0) {
+            catalog.innerHTML = `
+                <div class="catalog__empty">
+                    Empty
+                </div>
+            `;
+
+            reloadButton.style.display = "none";
+            return;
+        }
+
+    // RESIZE WINDOW
+
+        const isMobile = window.innerWidth <= 768;
+
+        let visibleProducts;
+
+        if (isMobile) {
+            visibleProducts = categoryProducts.slice(0, MOBILE_LIMIT);
+        } else {
+            visibleProducts = categoryProducts;
+        }
+
+        visibleProducts.forEach(function (product) {
+            catalog.appendChild(createProductCard(product));
+        });
+
+        if (isMobile && categoryProducts.length > MOBILE_LIMIT) {
+            reloadButton.style.display = "";
+        } else {
+            reloadButton.style.display = "none";
+        }
+    }
+
+
+    // PRODUCT CATEGORY
+
+    function showAllProducts() {
+
+        if (!activeCategory) {
+            return;
+        }
+
+        const categoryId = activeCategory.id;
+
+        const categoryProducts = products.filter(function (product) {
+            return product.category === categoryId;
+        });
+
+        catalog.innerHTML = "";
+
+        categoryProducts.forEach(function (product) {
+            catalog.appendChild(createProductCard(product));
+        });
+
+        reloadButton.style.display = "none";
+    }
+
+    categoryLinks.forEach(function (link) {
+
+        link.addEventListener("click", function (event) {
+
+            event.preventDefault();
+
+            categoryLinks.forEach(function (item) {
+                item.classList.remove("now");
+            });
+
+            this.classList.add("now");
+
+            activeCategory = this;
+
+            renderProducts();
+        });
+    });
+
+
+    // RELOAD
+
+    if (reloadButton) {
+
+        reloadButton.addEventListener("click", function (event) {
+
+            event.preventDefault();
+
+            showAllProducts();
+        });
+    }
+
+    let resizeTimer;
+
+    window.addEventListener("resize", function () {
+
+        clearTimeout(resizeTimer);
+
+        resizeTimer = setTimeout(function () {
+            renderProducts();
+        }, 150);
+    });
+
+
+    function escapeHTML(value) {
+
+        return String(value)
+            .replace(/&/g, "&amp;")
+            .replace(/</g, "&lt;")
+            .replace(/>/g, "&gt;")
+            .replace(/"/g, "&quot;")
+            .replace(/'/g, "&#039;");
+    }
+
+
+
+    function openProductModal(product) {
+
+        openModal("modal");
+
+    }
+
+    loadProducts();
+
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // ############## SLIDER ##############
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -124,3 +409,15 @@ document.addEventListener("DOMContentLoaded", function () {
     showSlide(currentIndex); // inicialization
     startAutoSlide();
 });
+
+
+// ############## MODAL WINDOW ##############
+    // Открытие указанного модального окна
+                function openModal(modalId) {
+                    document.getElementById(modalId).style.display = 'block';
+                }
+    
+            // Закрытие указанного модального окна
+               function closeModal(modalId) {
+                    document.getElementById(modalId).style.display = 'none';
+}
